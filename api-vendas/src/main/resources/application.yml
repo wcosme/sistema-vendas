@@ -1,9 +1,25 @@
-spring:
-  application:
-    name: Sistema de Vendas
-    
 server:
   port: 8081
   
   servlet:
     context-path: /sistema-vendas
+    
+spring:
+  application:
+    name: Sistema de Vendas
+    
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:    
+    
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+    
+
