@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,7 +35,7 @@ public class Order implements Serializable {
 	@Column(name = "total", length = 20, precision = 2)
 	private BigDecimal total;
 	
-	@OneToMany(mappedBy = "order")
-    private List<Item> itens;
+	@OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+	private List<Product> products;
 	
 }

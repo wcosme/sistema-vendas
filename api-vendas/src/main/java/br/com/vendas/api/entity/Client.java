@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +26,7 @@ public class Client implements Serializable {
 	@Column(name = "name", length = 100)
 	private String name;
 	
-	@OneToMany(mappedBy = "client")
+	@OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
 	private Set<Order> orders;
 
 }
