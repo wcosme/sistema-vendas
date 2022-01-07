@@ -11,12 +11,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "TB_ORDER_ITEM")
-public class OrderItem implements Serializable {
+@Table(name = "TB_ITEM")
+public class Item implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -26,6 +28,7 @@ public class OrderItem implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_order")
+    @JsonIgnore
     private Order order;
 
     @ManyToOne

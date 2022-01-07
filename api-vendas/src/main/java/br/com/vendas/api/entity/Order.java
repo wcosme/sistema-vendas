@@ -35,6 +35,6 @@ public class Order implements Serializable {
 	private BigDecimal total;
 	
 	@OneToMany(mappedBy = "order")
-    private List<OrderItem> itens;
+    private List<Item> itens;
 	
 }
